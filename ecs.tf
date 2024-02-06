@@ -8,7 +8,7 @@ resource "aws_ecs_cluster" "my_cluster" {
 
 resource "aws_ecs_task_definition" "my_task" {
   family                   = "my-task-family"
-  container_definitions   = 
+  container_definitions   = <<DEFINITION
 [
   {
     "name": "my-container",
@@ -24,7 +24,7 @@ resource "aws_ecs_task_definition" "my_task" {
     ]
   }
 ]
-
+DEFINITION
 }
 
 resource "aws_ecs_service" "my_service" {
